@@ -2,6 +2,8 @@
   "use strict";
 
   var CFG = window.BD_CONFIG || {};
+  // basePath lets the same files run under a sub-folder (e.g. a GitHub Pages preview)
+  var BASE = String(CFG.basePath || "").replace(/\/$/, "");
   var doc = document.documentElement;
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function $(sel, root) { return (root || document).querySelector(sel); }
@@ -80,7 +82,7 @@
     menuBtn.addEventListener("click", function () {
       var open = header.classList.toggle("menu-open");
       menuBtn.setAttribute("aria-expanded", String(open));
-      menuBtn.querySelector("use").setAttribute("href", "/assets/icons.svg#" + (open ? "i-close" : "i-menu"));
+      menuBtn.querySelector("use").setAttribute("href", BASE + "/assets/icons.svg#" + (open ? "i-close" : "i-menu"));
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && header.classList.contains("menu-open")) { menuBtn.click(); menuBtn.focus(); }
@@ -93,7 +95,7 @@
     if (!a) return;
     var href = a.getAttribute("href") || "";
     if (href.indexOf("tel:") === 0) track("call_click", { location: a.getAttribute("data-loc") || location.pathname });
-    else if (href.indexOf("/book/") === 0) track("book_cta_click", { location: a.getAttribute("data-loc") || location.pathname });
+    else if (href.indexOf(BASE + "/book/") === 0) track("book_cta_click", { location: a.getAttribute("data-loc") || location.pathname });
     else if (href.indexOf("mailto:") === 0) track("email_click", {});
   });
 
@@ -106,10 +108,10 @@
     btn.addEventListener("click", function () {
       if (vid.muted) {
         vid.muted = false; vid.currentTime = 0; var p = vid.play(); if (p && p.catch) p.catch(function () {});
-        label.textContent = "Mute"; use.setAttribute("href", "/assets/icons.svg#i-mute");
+        label.textContent = "Mute"; use.setAttribute("href", BASE + "/assets/icons.svg#i-mute");
         btn.setAttribute("aria-pressed", "true"); track("video_sound_on", {});
       } else {
-        vid.muted = true; label.textContent = "Play with sound"; use.setAttribute("href", "/assets/icons.svg#i-volume");
+        vid.muted = true; label.textContent = "Play with sound"; use.setAttribute("href", BASE + "/assets/icons.svg#i-volume");
         btn.setAttribute("aria-pressed", "false");
       }
     });
@@ -164,7 +166,11 @@
       var status = form.querySelector(".form-status");
       if (btn) { btn.setAttribute("aria-busy", "true"); btn.disabled = true; }
       if (status) { status.textContent = "Sending…"; status.classList.remove("is-error"); }
-      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: encode(form) })
+      // Preview builds (e.g. GitHub Pages) have no form backend: skip the POST and continue the flow.
+      var send = CFG.previewMode
+        ? Promise.resolve({ ok: true })
+        : fetch(BASE + "/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: encode(form) });
+      send
         .then(function (r) {
           if (!r.ok) throw new Error("bad status " + r.status);
           var name = form.getAttribute("name");
@@ -379,7 +385,7 @@
       fixes.innerHTML = "";
       LENSES[weakest].fix.forEach(function (f) {
         var li = document.createElement("li");
-        li.innerHTML = '<svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-check"/></svg><span></span>';
+        li.innerHTML = '<svg class="icon" aria-hidden="true"><use href="' + BASE + '/assets/icons.svg#i-check"/></svg><span></span>';
         li.querySelector("span").textContent = f; fixes.appendChild(li);
       });
       var form = $("form[name=scorecard]", root.parentNode) || $("form[name=scorecard]");
@@ -390,7 +396,7 @@
         form.querySelector("[name=answers]").value = $$("input[type=radio]:checked", root).map(function (r) { return r.name + "=" + r.value; }).join("; ") + "; leads/wk=" + leads + "; job=" + job;
       }
       var bookLink = $("[data-sc-book]", root);
-      if (bookLink) bookLink.href = "/book/?src=scorecard&stage=" + encodeURIComponent(LENSES[weakest].name);
+      if (bookLink) bookLink.href = BASE + "/book/?src=scorecard&stage=" + encodeURIComponent(LENSES[weakest].name);
       track("scorecard_complete", { weakest: LENSES[weakest].name });
       results.querySelector("h2").setAttribute("tabindex", "-1");
       results.querySelector("h2").focus();
