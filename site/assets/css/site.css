@@ -771,3 +771,9 @@ html { scrollbar-color: var(--ink) var(--ground-2); scrollbar-width: thin; }
 
 /* Book page title sits beside the calendar, so it runs a size smaller */
 [data-book] .h1 { font-size: clamp(2.6rem, 4.4vw, 4.4rem); max-width: 14ch; }
+
+/* Door plate: stack the items on narrow screens so no divider starts a wrapped line */
+@media (max-width: 760px) {
+  .door-dot { flex-direction: column; gap: 2px; }
+  .door-dot span + span::before { display: none; }
+}
