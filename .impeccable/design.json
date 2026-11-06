@@ -1,0 +1,570 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-07T01:00:00Z",
+  "title": "Design System: Bright Department",
+  "extensions": {
+    "colorMeta": {
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Reflex Cobalt",
+        "canonical": "#1f3fd1",
+        "oklch": "oklch(45.6% 0.225 266)",
+        "tonalRamp": [
+          "#010037",
+          "#08007e",
+          "#1325ba",
+          "#2b52e4",
+          "#527efe",
+          "#89abfe",
+          "#bdd1fe",
+          "#e7effe"
+        ]
+      },
+      "cobalt-deep": {
+        "role": "primary",
+        "displayName": "Cobalt Deep (hover/pressed)",
+        "canonical": "#142b9c",
+        "oklch": "oklch(36.4% 0.183 266)",
+        "tonalRamp": [
+          "#020037",
+          "#08007d",
+          "#1934a5",
+          "#365acd",
+          "#5680f6",
+          "#89abfe",
+          "#bdd1fe",
+          "#e7effe"
+        ]
+      },
+      "cobalt-tint": {
+        "role": "primary",
+        "displayName": "Cobalt Tint",
+        "canonical": "#e7ebfb",
+        "oklch": "oklch(94.2% 0.022 274)",
+        "tonalRamp": [
+          "#080a14",
+          "#232631",
+          "#414451",
+          "#626573",
+          "#858897",
+          "#a9adbc",
+          "#ccd0e0",
+          "#eaeefe"
+        ]
+      },
+      "on-cobalt-2": {
+        "role": "primary",
+        "displayName": "On-Cobalt Secondary",
+        "canonical": "#c9d2f7",
+        "oklch": "oklch(86.9% 0.052 274)",
+        "tonalRamp": [
+          "#060821",
+          "#1f2440",
+          "#3c4361",
+          "#5d6484",
+          "#7f87a9",
+          "#a4acd0",
+          "#c6cff4",
+          "#eaeefe"
+        ]
+      },
+      "yellow": {
+        "role": "secondary",
+        "displayName": "Safety Yellow",
+        "canonical": "#ffc915",
+        "oklch": "oklch(86.0% 0.173 88)",
+        "tonalRamp": [
+          "#110a00",
+          "#322400",
+          "#564202",
+          "#7f6200",
+          "#a98400",
+          "#d5a703",
+          "#ffc91e",
+          "#ffedc2"
+        ]
+      },
+      "yellow-deep": {
+        "role": "secondary",
+        "displayName": "Safety Yellow Deep (hover)",
+        "canonical": "#f0b400",
+        "oklch": "oklch(80.3% 0.165 84)",
+        "tonalRamp": [
+          "#120900",
+          "#332400",
+          "#594100",
+          "#826000",
+          "#ad8102",
+          "#dba407",
+          "#ffc84a",
+          "#ffecc9"
+        ]
+      },
+      "red": {
+        "role": "tertiary",
+        "displayName": "Signal Red",
+        "canonical": "#e0352b",
+        "oklch": "oklch(59.5% 0.209 28)",
+        "tonalRamp": [
+          "#210000",
+          "#500000",
+          "#860002",
+          "#c10106",
+          "#ed4337",
+          "#ff8576",
+          "#febfb5",
+          "#ffe9e5"
+        ]
+      },
+      "red-tint": {
+        "role": "tertiary",
+        "displayName": "Red Tint",
+        "canonical": "#fbe7e5",
+        "oklch": "oklch(94.3% 0.022 24)",
+        "tonalRamp": [
+          "#130807",
+          "#312221",
+          "#50413f",
+          "#726160",
+          "#968483",
+          "#bca9a7",
+          "#dfccca",
+          "#fde9e7"
+        ]
+      },
+      "loss-on-ink": {
+        "role": "tertiary",
+        "displayName": "Loss on Ink",
+        "canonical": "#ff6a5f",
+        "oklch": "oklch(70.8% 0.184 26)",
+        "tonalRamp": [
+          "#210000",
+          "#500003",
+          "#860009",
+          "#b82423",
+          "#e35048",
+          "#ff8579",
+          "#febfb7",
+          "#fee9e6"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Fleet Enamel",
+        "canonical": "#fbfbf9",
+        "oklch": "oklch(98.8% 0.003 106)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#262625",
+          "#454543",
+          "#666664",
+          "#898987",
+          "#aeaeac",
+          "#d1d1cf",
+          "#eeeeec"
+        ]
+      },
+      "ground-2": {
+        "role": "neutral",
+        "displayName": "Panel Grey",
+        "canonical": "#eef0f2",
+        "oklch": "oklch(95.4% 0.003 247)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#252728",
+          "#444547",
+          "#646668",
+          "#87898b",
+          "#acaeb0",
+          "#cfd1d3",
+          "#edeff1"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Sign Black",
+        "canonical": "#111216",
+        "oklch": "oklch(18.3% 0.008 274)",
+        "tonalRamp": [
+          "#0a0b0f",
+          "#25262b",
+          "#43454a",
+          "#64666b",
+          "#87898e",
+          "#acaeb3",
+          "#cfd1d7",
+          "#edeef4"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#3d424b",
+        "oklch": "oklch(37.8% 0.017 262)",
+        "tonalRamp": [
+          "#070b12",
+          "#22272f",
+          "#40454e",
+          "#616670",
+          "#848994",
+          "#a8aeb9",
+          "#cbd1dc",
+          "#e8effa"
+        ]
+      },
+      "steel": {
+        "role": "neutral",
+        "displayName": "Steel",
+        "canonical": "#5b616b",
+        "oklch": "oklch(49.1% 0.018 260)",
+        "tonalRamp": [
+          "#070b13",
+          "#22272f",
+          "#40454f",
+          "#606671",
+          "#838a94",
+          "#a8aeb9",
+          "#cad1dd",
+          "#e8effb"
+        ]
+      },
+      "on-ink": {
+        "role": "neutral",
+        "displayName": "On-Ink Light",
+        "canonical": "#e4e6ea",
+        "oklch": "oklch(92.5% 0.006 264)",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#252629",
+          "#434548",
+          "#646669",
+          "#87898d",
+          "#acaeb2",
+          "#cfd1d5",
+          "#eceef2"
+        ]
+      },
+      "on-ink-2": {
+        "role": "neutral",
+        "displayName": "On-Ink Secondary",
+        "canonical": "#c7cad1",
+        "oklch": "oklch(83.9% 0.010 267)",
+        "tonalRamp": [
+          "#090b10",
+          "#24262c",
+          "#42454b",
+          "#63666c",
+          "#868990",
+          "#abaeb5",
+          "#ced1d8",
+          "#ebeef6"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display (sign gothic)",
+        "purpose": "Page H1s and the final call to action. Big Shoulders Display 900, uppercase. The door title runs two lines with the second in cobalt."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section H2s, held to about 12 to 16ch."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Tile, card, tool, lens and trace-state titles; road plates; gauges and phone numerals use the same face at 800 to 900."
+      },
+      "title-text": {
+        "displayName": "Title Text",
+        "purpose": "Sentence-case Barlow 700 H4s and step titles."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Section intros, max 46ch, ink-2."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text in Barlow (1.0625rem under 760px), 66 to 70ch in prose."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase Barlow 700 that names a panel, table column, fact or speaker. Never a lead-in above a headline."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Uppercase Barlow 700 on buttons and the mobile action bar."
+      }
+    },
+    "shadows": [
+      {
+        "name": "button-contact",
+        "value": "0 10px 18px -12px rgba(17, 18, 22, 0.45)",
+        "purpose": "Contact shadow under yellow and cobalt buttons on light grounds; removed on line buttons and dark bands."
+      },
+      {
+        "name": "console-lift",
+        "value": "0 30px 60px -30px rgba(17, 18, 22, 0.45)",
+        "purpose": "The SAMPLE dashboard only, so it reads as a lifted device."
+      },
+      {
+        "name": "live-dot-halo",
+        "value": "0 0 0 3px var(--cobalt-tint)",
+        "purpose": "Status lamp halo on the live dot beside the header phone."
+      },
+      {
+        "name": "input-focus",
+        "value": "0 0 0 3px var(--cobalt-tint), 0 0 0 5px var(--cobalt)",
+        "purpose": "Double focus ring on inputs, selects and textareas."
+      },
+      {
+        "name": "input-invalid",
+        "value": "0 0 0 3px var(--red-tint)",
+        "purpose": "Halo on invalid fields, paired with a red border."
+      },
+      {
+        "name": "cab-gasket",
+        "value": "inset 0 0 0 6px var(--ink)",
+        "purpose": "Cab-window rubber gasket drawn as one inset stroke on the window polygon."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Default for presses (160ms), arrow nudges (200ms), underline wipes (220ms), reveals (700 to 800ms), stripe draw (900ms) and image zooms (900ms)."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Horizontal accordion flex-grow (600ms)."
+      },
+      {
+        "name": "press",
+        "value": "transform: scale(0.97) over 160ms ease-out",
+        "purpose": "Active state on buttons and action-bar cells (0.95 to 0.99 on smaller controls)."
+      },
+      {
+        "name": "fleet-stripe-draw",
+        "value": "clip-path inset(0 100% 0 0) to inset(0) over 900ms ease-out; tape delayed 120ms",
+        "purpose": "Lays the livery on like vinyl when the page loads."
+      },
+      {
+        "name": "reveal",
+        "value": "IntersectionObserver (threshold 0.08, rootMargin 0 0 -8% 0): opacity 0 and translateY(24px) to rest over 700/800ms ease-out",
+        "purpose": "One-shot entrance for elements with data-reveal."
+      },
+      {
+        "name": "trace-scrub",
+        "value": "GSAP ScrollTrigger: strokeDashoffset to 0, start top 60%, end bottom 65%, scrub 0.6; missed branch opacity scrub top 75% to top 50%",
+        "purpose": "The signature call trace draws as the reader scrolls."
+      },
+      {
+        "name": "manifesto-words",
+        "value": "GSAP ScrollTrigger: each word opacity 0.14 to 1, stagger 0.08, start top 78%, end bottom 42%, scrub 0.4",
+        "purpose": "Manifesto lines come up from faint to full."
+      },
+      {
+        "name": "console-tilt",
+        "value": "GSAP ScrollTrigger: scale 0.88, rotateX 8deg, opacity 0.55 to flat, top 92% to top 38%, scrub 0.5; fades to 0.35 on exit",
+        "purpose": "The SAMPLE console tilts upright into view."
+      },
+      {
+        "name": "marquee",
+        "value": "translateX(-50%) over 40s linear infinite; paused on hover",
+        "purpose": "Ink band of lettered phrases."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Animations collapse to 0.001ms, the marquee stops and wraps, reveals render in place, the stripe is not drawn, GSAP is skipped and every trace node is lit, and the hero video does not autoplay."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "lg",
+        "value": "1180px",
+        "purpose": "Nav tightens, logo 184px, road plates 5 to 3 columns."
+      },
+      {
+        "name": "md",
+        "value": "1020px",
+        "purpose": "Header 68px with menu button; two-column layouts stack; bento and console to 2 columns; trace pin unsticks."
+      },
+      {
+        "name": "sm",
+        "value": "760px",
+        "purpose": "Sticky mobile action bar; single-column grids; accordion becomes a vertical stack; door seam and photo pills removed."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Safety-yellow action plate. The main call to action: Book a call.",
+      "html": "<a class=\"ds-btn\" href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\"/><path d=\"M3 10h18M8 3v4M16 3v4\"/></svg>Book a free call<svg class=\"ds-icon ds-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 56px; padding: 0 26px; background: var(--yellow, #ffc915); color: var(--ink, #111216); border: 2px solid var(--ink, #111216); border-radius: 0; font-family: 'Barlow', system-ui, sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; cursor: pointer; white-space: nowrap; box-shadow: 0 10px 18px -12px rgba(17, 18, 22, 0.45); transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease; } .ds-btn:hover { background: var(--yellow-deep, #f0b400); } .ds-btn:hover .ds-arrow { transform: translateX(4px); } .ds-btn:active { transform: scale(0.97); } .ds-btn:focus-visible { outline: 3px solid var(--cobalt, #1f3fd1); outline-offset: 3px; } .ds-icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: square; stroke-linejoin: miter; transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1); }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action: transparent with a 2px ink border, fills ink on hover.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">How it works</a>",
+      "css": ".ds-btn-line { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 26px; background: transparent; color: var(--ink, #111216); border: 2px solid var(--ink, #111216); border-radius: 0; font-family: 'Barlow', system-ui, sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease, color 200ms ease; } .ds-btn-line:hover { background: var(--ink, #111216); color: var(--ground, #fbfbf9); } .ds-btn-line:active { transform: scale(0.97); } .ds-btn-line:focus-visible { outline: 3px solid var(--cobalt, #1f3fd1); outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Squared paper field with a 2px ink border and a double cobalt focus ring.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-label\">Mobile phone</span><input class=\"ds-input\" type=\"tel\" placeholder=\"(804) 555-0123\"></label>",
+      "css": ".ds-field { display: grid; gap: 8px; font-family: 'Barlow', system-ui, sans-serif; } .ds-label { font-weight: 700; font-size: 0.98rem; color: var(--ink, #111216); } .ds-input { width: 100%; min-height: 54px; padding: 12px 14px; background: var(--paper, #fff); color: var(--ink, #111216); border: 2px solid var(--ink, #111216); border-radius: 0; font: inherit; font-size: 1.05rem; transition: box-shadow 160ms ease, border-color 160ms ease; } .ds-input::placeholder { color: #757b85; } .ds-input:focus { outline: none; box-shadow: 0 0 0 3px var(--cobalt-tint, #e7ebfb), 0 0 0 5px var(--cobalt, #1f3fd1); } .ds-input[aria-invalid='true'] { border-color: var(--red, #e0352b); box-shadow: 0 0 0 3px var(--red-tint, #fbe7e5); }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Sticky enamel header with a 2px ink rule, cobalt wipe underlines and the display phone number with a live dot.",
+      "html": "<header class=\"ds-header\"><strong class=\"ds-brand\">BRIGHT DEPARTMENT</strong><nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Services</a><a href=\"#\">How it works</a><a href=\"#\">Case studies</a></nav><a class=\"ds-phone\" href=\"#\"><span class=\"ds-dot\"></span>(804) 635-3682</a></header>",
+      "css": ".ds-header { display: flex; align-items: center; gap: 28px; height: 76px; padding: 0 24px; background: color-mix(in srgb, var(--ground, #fbfbf9) 94%, transparent); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 2px solid var(--ink, #111216); font-family: 'Barlow', system-ui, sans-serif; color: var(--ink, #111216); } .ds-brand { font-family: 'Big Shoulders Display', 'Barlow', sans-serif; font-weight: 900; font-size: 1.5rem; } .ds-nav { display: flex; gap: 4px; margin-left: auto; } .ds-nav a { position: relative; padding: 10px 12px; font-weight: 600; font-size: 1rem; color: inherit; text-decoration: none; } .ds-nav a::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 2px; background: var(--cobalt, #1f3fd1); transform: scaleX(0); transform-origin: left; transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-nav a:hover::after, .ds-nav a[aria-current='page']::after { transform: scaleX(1); } .ds-nav a:focus-visible { outline: 3px solid var(--cobalt, #1f3fd1); outline-offset: 3px; } .ds-phone { display: inline-flex; align-items: center; gap: 8px; font-family: 'Big Shoulders Display', 'Barlow', sans-serif; font-weight: 800; font-size: 1.45rem; color: inherit; text-decoration: none; white-space: nowrap; } .ds-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--cobalt, #1f3fd1); box-shadow: 0 0 0 3px var(--cobalt-tint, #e7ebfb); }"
+    },
+    {
+      "name": "Fleet Stripe",
+      "kind": "custom",
+      "refersTo": "fleet-stripe",
+      "description": "The livery band: a skewed cobalt bar over yellow-and-ink reflective tape. Closes the door hero.",
+      "html": "<div class=\"ds-stripe\" aria-hidden=\"true\"></div>",
+      "css": ".ds-stripe { position: relative; height: 34px; overflow: hidden; } .ds-stripe::before, .ds-stripe::after { content: ''; position: absolute; left: -4%; transform: skewX(-32deg); transform-origin: left center; animation: ds-stripe-draw 900ms cubic-bezier(0.23, 1, 0.32, 1) both; } .ds-stripe::before { top: 0; height: 20px; right: 9%; background: var(--cobalt, #1f3fd1); } .ds-stripe::after { top: 25px; height: 9px; right: 4%; background: repeating-linear-gradient(-58deg, var(--yellow, #ffc915) 0 16px, var(--ink, #111216) 16px 22px); animation-delay: 120ms; } @keyframes ds-stripe-draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } } @media (prefers-reduced-motion: reduce) { .ds-stripe::before, .ds-stripe::after { animation: none; } }"
+    },
+    {
+      "name": "Bento Tile",
+      "kind": "card",
+      "refersTo": "tile",
+      "description": "Paper panel in a 2px ink-seamed grid; the Dashboard tile is the cobalt variant.",
+      "html": "<div class=\"ds-bento\"><div class=\"ds-tile\"><h3>AI Receptionist</h3><p>Answers every call, day or night, books the job and texts your team a summary.</p></div><div class=\"ds-tile ds-tile-dash\"><h3>Dashboard</h3><p>The whole business on one screen before your first coffee.</p></div></div>",
+      "css": ".ds-bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; background: var(--ink, #111216); border: 2px solid var(--ink, #111216); } .ds-tile { background: var(--paper, #fff); color: var(--ink, #111216); padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 16px; font-family: 'Barlow', system-ui, sans-serif; transition: background-color 220ms ease; } .ds-tile h3 { margin: 0; font-family: 'Big Shoulders Display', 'Barlow', sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(1.9rem, 2.8vw, 2.8rem); line-height: 0.95; } .ds-tile p { margin: 0; color: var(--ink-2, #3d424b); max-width: 46ch; } .ds-tile-dash { background: var(--cobalt, #1f3fd1); color: #fff; } .ds-tile-dash p { color: var(--on-cobalt-2, #c9d2f7); }"
+    },
+    {
+      "name": "Road Plate",
+      "kind": "custom",
+      "refersTo": "road-plate",
+      "description": "Highway-sign step marker: cobalt plate, white reflective border, cobalt outline. The final step is ink.",
+      "html": "<div class=\"ds-plates\"><span class=\"ds-plate\">Day 1</span><span class=\"ds-plate\">Day 2–4</span><span class=\"ds-plate ds-plate-last\">Day 7</span></div>",
+      "css": ".ds-plates { display: flex; flex-wrap: wrap; gap: 16px; } .ds-plate { display: inline-grid; place-items: center; min-width: 96px; padding: 8px 12px; background: var(--cobalt, #1f3fd1); color: #fff; border: 3px solid #fff; outline: 2px solid var(--cobalt, #1f3fd1); font-family: 'Big Shoulders Display', 'Barlow', sans-serif; font-weight: 900; font-size: 1.6rem; line-height: 1; text-transform: uppercase; } .ds-plate-last { background: var(--ink, #111216); outline-color: var(--ink, #111216); }"
+    },
+    {
+      "name": "Call Trace Step",
+      "kind": "custom",
+      "refersTo": "call-trace",
+      "description": "Signature: cobalt ring node and lettered state name on the trace; the missed branch is red and dashed.",
+      "html": "<ol class=\"ds-trace\"><li class=\"ds-step is-lit\"><span class=\"ds-node\"></span><b>9:42 PM</b><h4>Answered</h4><p>The AI receptionist picks up on the second ring.</p></li><li class=\"ds-step ds-missed\"><span class=\"ds-node\"></span><b>Without us</b><h4>Missed</h4><div class=\"ds-miss\">Voicemail. They call the next roofer.</div></li></ol>",
+      "css": ".ds-trace { list-style: none; margin: 0; padding: 0 0 0 56px; border-left: 6px solid var(--cobalt, #1f3fd1); margin-left: 16px; font-family: 'Barlow', system-ui, sans-serif; color: var(--ink, #111216); } .ds-step { position: relative; padding-bottom: 40px; } .ds-node { position: absolute; left: -75px; top: 4px; width: 32px; height: 32px; border-radius: 50%; background: var(--paper, #fff); border: 4px solid var(--cobalt, #1f3fd1); transition: background-color 300ms ease, transform 300ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-step.is-lit .ds-node { background: var(--cobalt, #1f3fd1); transform: scale(1.08); } .ds-step h4 { margin: 6px 0 10px; font-family: 'Big Shoulders Display', 'Barlow', sans-serif; font-weight: 900; font-size: clamp(2.2rem, 3.6vw, 3.4rem); line-height: 0.95; text-transform: uppercase; } .ds-step p { margin: 0; color: var(--ink-2, #3d424b); max-width: 44ch; } .ds-missed .ds-node { border-color: var(--red, #e0352b); } .ds-missed b { color: #a3221a; } .ds-missed h4 { color: var(--red, #e0352b); } .ds-miss { border: 2px dashed var(--red, #e0352b); background: var(--red-tint, #fbe7e5); padding: 18px 20px; max-width: 470px; }"
+    },
+    {
+      "name": "Placeholder Token and SAMPLE Tag",
+      "kind": "chip",
+      "refersTo": "placeholder-token",
+      "description": "Production markers: yellow dashed token for owner-supplied numbers; bordered SAMPLE tag for illustrative data.",
+      "html": "<p class=\"ds-copy\"><mark class=\"ds-ph\">[NUMBER]</mark> calls answered by AI <span class=\"ds-sample\">Sample data</span></p>",
+      "css": ".ds-copy { font-family: 'Barlow', system-ui, sans-serif; font-size: 1.125rem; color: var(--ink, #111216); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; } .ds-ph { background: var(--yellow, #ffc915); color: var(--ink, #111216); font-weight: 700; padding: 0 0.3em; outline: 2px dashed var(--ink, #111216); outline-offset: 1px; white-space: nowrap; } .ds-sample { display: inline-flex; align-items: center; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border: 2px solid currentColor; padding: 3px 8px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Truck Door Lettering",
+    "overview": "The site is the side of a good work truck. The ground is fleet-white enamel; type is cut vinyl in sign black and reflex cobalt, set big enough to read from the road. The business name, the trade and the phone number are the hero, and the phone number is set at road scale, not tucked into a nav corner. Every surface is a flat panel joined by one 2px ink rule, with corners squared like plate edges. A cobalt-and-yellow fleet stripe on reflective-tape diagonals is the livery that closes the door panel and recurs as the brand's single decorative device.\n\nDensity is confident and blunt: tall condensed display lines at a 0.92 line height, short Barlow paragraphs held to 44 to 46 characters, grids of panels butted together with a 2px seam rather than floating cards with gaps. Colour carries meaning. Cobalt is the working voice (live line, the trace, booked, the AI speaking), yellow is the thing you press, and red is what a missed call costs. The world rejects the category's dark navy, purple-gradient AI glow and icon-tile cards.\n\nMotion is mechanical and scroll-driven. The call trace draws as you read, manifesto words come up from faint, the SAMPLE console tilts upright into place, and the fleet stripe is laid on like vinyl from a roll. Everything has a static, fully legible state under reduced motion.",
+    "keyCharacteristics": [
+      "Fleet-white ground, sign-black ink, reflex-cobalt voice, safety-yellow actions, signal-red loss.",
+      "One 2px ink stroke for every rule, border, seam and icon; squared corners everywhere a panel or control exists.",
+      "Big Shoulders Display 900 in uppercase for anything lettered; Barlow for anything read.",
+      "Panels share seams: grids use a 2px ink gap on an ink ground instead of gutters between floating cards.",
+      "The phone number is display type, set at road scale on the door and in the final call to action.",
+      "Scroll-scrubbed signature motion with a custom ease-out (cubic-bezier(0.23, 1, 0.32, 1)) for everything else."
+    ],
+    "rules": [
+      {
+        "name": "The Yellow Means Go Rule",
+        "body": "Safety Yellow belongs to the action layer: buttons, the mobile Book bar, the Scorecard lead block, the fleet-stripe tape and the [ ... ] placeholder token. Use it to mark what to press or what is still missing, never as decoration or emphasis.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Means Loss Rule",
+        "body": "Signal Red marks what is lost: the missed call and money leaking away. The Scorecard weakest stage is named in cobalt with an ink bar; only its dollar estimate is red. Form validation is the one functional exception. Red never decorates and never marks success.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cobalt Speaks Rule",
+        "body": "When the business or its AI is doing the work (answering, booking, the live line), the type is cobalt. Ink is for the owner's own words.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lettered or Read Rule",
+        "body": "If it should be read from across the road (names, numbers, states, titles), it is Big Shoulders Display 900 in uppercase. If it should be read up close, it is Barlow in sentence case. There is no third face and no mid-weight display.",
+        "section": "typography"
+      },
+      {
+        "name": "The Phone at Road Scale Rule",
+        "body": "The phone number is display type, never body-sized link text, wherever it is the primary content of a block.",
+        "section": "typography"
+      },
+      {
+        "name": "The Shared Seam Rule",
+        "body": "Adjacent panels share one 2px ink seam. Don't float cards on a gap of ground colour.",
+        "section": "layout"
+      },
+      {
+        "name": "The Painted Panel Rule",
+        "body": "Panels are paint on a door, not cards on a table. A new surface gets a 2px ink border or a seam, not a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Stroke Rule",
+        "body": "One weight (2px, ink) for every rule and icon. A heavier line has to be a named device (trace, gasket, plate, focus), never a casual emphasis.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Plate Edge Rule",
+        "body": "Corners are square. Round only signal lamps.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do draw every border, seam, divider and icon with the single 2px ink stroke, and keep every corner square.",
+      "Do set names, numbers, states and titles in Big Shoulders Display 900 uppercase, and everything read up close in Barlow.",
+      "Do set the phone number in display type at road scale wherever it is the primary content.",
+      "Do reserve Safety Yellow for actions, the Scorecard lead block, the fleet-stripe tape and the [ ... ] placeholder token.",
+      "Do reserve Signal Red for missed-call loss and money lost, plus form errors.",
+      "Do join grouped panels with a shared 2px ink seam (2px gap over an ink ground).",
+      "Do use the custom ease-out (cubic-bezier(0.23, 1, 0.32, 1)) for state transitions, a 0.97 press scale, and hover effects gated to pointer-fine devices.",
+      "Do label any illustrative dashboard or transcript with a visible SAMPLE tag, and mark every owner-supplied number with the placeholder token until it is real.",
+      "Do give every scroll-scrubbed and revealed element a complete static state under prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't use the category's dark navy, purple-gradient AI glow or icon-tile cards.",
+      "Don't round panel, button, input or image corners. Circles are for signal lamps only.",
+      "Don't use yellow as decoration, a highlight or a section background outside the Scorecard lead block.",
+      "Don't use red for emphasis, warnings unrelated to loss, or anything positive.",
+      "Don't float cards on ground-coloured gaps or give new surfaces drop shadows; borders and seams do the separating.",
+      "Don't introduce a third typeface or set display type below weight 800.",
+      "Don't put small uppercase lead-in lines above headlines; uppercase labels only name the contents of a panel, table or field.",
+      "Don't present invented results as real; use the placeholder token or the SAMPLE tag."
+    ]
+  }
+}

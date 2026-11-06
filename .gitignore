@@ -1,0 +1,9 @@
+# Local-only working files
+_current/
+.impeccable/review/
+.impeccable/questions/
+.impeccable/mocks/
+.impeccable/direction-payload.json
+node_modules/
+.DS_Store
+Thumbs.db
