@@ -87,9 +87,9 @@ function footer() {
   <div class="wrap footer-top">
     <div>
       <img src="/assets/brightdept-white.svg" alt="Bright Department" width="240" height="30" loading="lazy">
-      <p class="small" style="margin-top:18px;max-width:34ch;color:#c7cad1">Your AI department, for small business. Based in Short Pump, serving Richmond and Central Virginia.</p>
+      <p class="small on-ink-2" style="margin-top:18px;max-width:34ch">Your AI department, for small business. Based in Short Pump, serving Richmond and Central Virginia.</p>
       <a class="footer-phone tnum" href="${TEL}" data-loc="footer">${PHONE}</a>
-      <p class="small" style="color:#9aa0aa;margin-top:6px">Our AI answers, day or night.</p>
+      <p class="small on-ink-3" style="margin-top:6px">Our AI answers, day or night.</p>
     </div>
     <div>
       <h2>Company</h2>
@@ -116,7 +116,7 @@ function footer() {
         <li><a href="mailto:${EMAIL}">${EMAIL}</a></li>
         <li><a href="${IG}" rel="noopener">Instagram @brightdepartmentai</a></li>
         <li>Short Pump · Richmond, VA</li>
-        <li style="color:#9aa0aa">Richmond, Short Pump, Glen Allen, Henrico, Chesterfield, Midlothian, Mechanicsville and Central Virginia</li>
+        <li class="on-ink-3">Richmond, Short Pump, Glen Allen, Henrico, Chesterfield, Midlothian, Mechanicsville and Central Virginia</li>
       </ul>
     </div>
   </div>
@@ -212,12 +212,12 @@ function calculator({ id = "calc", preset = "roofing", headingTag = "h2", headin
         <input type="hidden" name="calc_summary" data-calc-hidden="summary">
         ${attribHidden}${honeypot}
         <div class="field"><label for="${id}-em">Email</label><input class="input" type="email" id="${id}-em" name="email" autocomplete="email" required></div>
-        <div class="field"><label for="${id}-ph">Phone <span style="font-weight:400;color:#b9bdc6">(optional)</span></label><input class="input" type="tel" id="${id}-ph" name="phone" autocomplete="tel"></div>
-        <label class="check" for="${id}-sms" style="color:#c7cad1"><input type="checkbox" id="${id}-sms" name="sms_consent" value="yes"><span>Text me too. Reply STOP to opt out. Optional.</span></label>
+        <div class="field"><label for="${id}-ph">Phone <span class="on-ink-4" style="font-weight:400">(optional)</span></label><input class="input" type="tel" id="${id}-ph" name="phone" autocomplete="tel"></div>
+        <label class="check on-ink-2" for="${id}-sms"><input type="checkbox" id="${id}-sms" name="sms_consent" value="yes"><span>Text me too. Reply STOP to opt out. Optional.</span></label>
         <button class="btn btn-block" type="submit">Send it</button>
         <p class="form-status small" role="status"></p>
       </form>
-      <a class="link-arrow" href="/scorecard/" style="color:#fff;width:fit-content">Not sure missed calls are the leak? Take the Scorecard ${icon("arrow")}</a>
+      <a class="link-arrow" href="/scorecard/" style="color:var(--paper);width:fit-content">Not sure missed calls are the leak? Take the Scorecard ${icon("arrow")}</a>
     </div>
   </div>
 </div>`;
@@ -477,7 +477,7 @@ page({
         <h3>One dashboard for the whole business</h3>
         <span class="core-mark">Our core service</span>
         <p>Calls, leads, booked jobs, open quotes, cash and reviews on one screen every morning, for one business or several.</p>
-        <div class="tile-foot"><a class="link-arrow" href="#console" style="color:#fff">See a sample console ${icon("arrow")}</a></div>
+        <div class="tile-foot"><a class="link-arrow" href="#console" style="color:var(--paper)">See a sample console ${icon("arrow")}</a></div>
       </article>
       <article class="tile t-tools" data-reveal>
         <h3>Inside the tools you already use</h3>
@@ -1079,7 +1079,7 @@ page({
           <div class="sc-options">${opts.map((o, n) => `<label><input type="radio" name="q${i + 1}" value="${3 - n}"><span>${esc(o)}</span></label>`).join("")}</div>
         </fieldset>`).join("")}
         <div class="sc-results" aria-live="polite">
-          <h2 class="h2">Your bottleneck: <span class="c-red" data-sc-weak></span></h2>
+          <h2 class="h2">Your bottleneck: <span class="c-cobalt" data-sc-weak></span></h2>
           <p class="lede" style="max-width:56ch">Rough estimate of what this stage leaks each month: <b class="tnum" data-sc-cost style="color:var(--red)"></b>. It assumes a 30% close rate, so treat it as a starting point, not a quote.</p>
           <div class="sc-bars" data-sc-bars></div>
           <div class="two-col">

@@ -4,58 +4,413 @@
   "title": "Design System: Bright Department",
   "extensions": {
     "colorMeta": {
-      "cobalt": { "role": "primary", "displayName": "Reflex Cobalt", "canonical": "#1f3fd1", "oklch": "oklch(45.6% 0.225 266)", "tonalRamp": ["#010037", "#08007e", "#1325ba", "#2b52e4", "#527efe", "#89abfe", "#bdd1fe", "#e7effe"] },
-      "cobalt-deep": { "role": "primary", "displayName": "Cobalt Deep (hover/pressed)", "canonical": "#142b9c", "oklch": "oklch(36.4% 0.183 266)", "tonalRamp": ["#020037", "#08007d", "#1934a5", "#365acd", "#5680f6", "#89abfe", "#bdd1fe", "#e7effe"] },
-      "cobalt-tint": { "role": "primary", "displayName": "Cobalt Tint", "canonical": "#e7ebfb", "oklch": "oklch(94.2% 0.022 274)", "tonalRamp": ["#080a14", "#232631", "#414451", "#626573", "#858897", "#a9adbc", "#ccd0e0", "#eaeefe"] },
-      "on-cobalt-2": { "role": "primary", "displayName": "On-Cobalt Secondary", "canonical": "#c9d2f7", "oklch": "oklch(86.9% 0.052 274)", "tonalRamp": ["#060821", "#1f2440", "#3c4361", "#5d6484", "#7f87a9", "#a4acd0", "#c6cff4", "#eaeefe"] },
-      "yellow": { "role": "secondary", "displayName": "Safety Yellow", "canonical": "#ffc915", "oklch": "oklch(86.0% 0.173 88)", "tonalRamp": ["#110a00", "#322400", "#564202", "#7f6200", "#a98400", "#d5a703", "#ffc91e", "#ffedc2"] },
-      "yellow-deep": { "role": "secondary", "displayName": "Safety Yellow Deep (hover)", "canonical": "#f0b400", "oklch": "oklch(80.3% 0.165 84)", "tonalRamp": ["#120900", "#332400", "#594100", "#826000", "#ad8102", "#dba407", "#ffc84a", "#ffecc9"] },
-      "red": { "role": "tertiary", "displayName": "Signal Red", "canonical": "#e0352b", "oklch": "oklch(59.5% 0.209 28)", "tonalRamp": ["#210000", "#500000", "#860002", "#c10106", "#ed4337", "#ff8576", "#febfb5", "#ffe9e5"] },
-      "red-tint": { "role": "tertiary", "displayName": "Red Tint", "canonical": "#fbe7e5", "oklch": "oklch(94.3% 0.022 24)", "tonalRamp": ["#130807", "#312221", "#50413f", "#726160", "#968483", "#bca9a7", "#dfccca", "#fde9e7"] },
-      "loss-on-ink": { "role": "tertiary", "displayName": "Loss on Ink", "canonical": "#ff6a5f", "oklch": "oklch(70.8% 0.184 26)", "tonalRamp": ["#210000", "#500003", "#860009", "#b82423", "#e35048", "#ff8579", "#febfb7", "#fee9e6"] },
-      "ground": { "role": "neutral", "displayName": "Fleet Enamel", "canonical": "#fbfbf9", "oklch": "oklch(98.8% 0.003 106)", "tonalRamp": ["#0b0b0a", "#262625", "#454543", "#666664", "#898987", "#aeaeac", "#d1d1cf", "#eeeeec"] },
-      "ground-2": { "role": "neutral", "displayName": "Panel Grey", "canonical": "#eef0f2", "oklch": "oklch(95.4% 0.003 247)", "tonalRamp": ["#0a0b0d", "#252728", "#444547", "#646668", "#87898b", "#acaeb0", "#cfd1d3", "#edeff1"] },
-      "paper": { "role": "neutral", "displayName": "Paper White", "canonical": "#ffffff", "oklch": "oklch(100% 0 0)", "tonalRamp": ["#0b0b0b", "#262626", "#454545", "#666666", "#898989", "#aeaeae", "#d1d1d1", "#eeeeee"] },
-      "ink": { "role": "neutral", "displayName": "Sign Black", "canonical": "#111216", "oklch": "oklch(18.3% 0.008 274)", "tonalRamp": ["#0a0b0f", "#25262b", "#43454a", "#64666b", "#87898e", "#acaeb3", "#cfd1d7", "#edeef4"] },
-      "ink-2": { "role": "neutral", "displayName": "Ink Secondary", "canonical": "#3d424b", "oklch": "oklch(37.8% 0.017 262)", "tonalRamp": ["#070b12", "#22272f", "#40454e", "#616670", "#848994", "#a8aeb9", "#cbd1dc", "#e8effa"] },
-      "steel": { "role": "neutral", "displayName": "Steel", "canonical": "#5b616b", "oklch": "oklch(49.1% 0.018 260)", "tonalRamp": ["#070b13", "#22272f", "#40454f", "#606671", "#838a94", "#a8aeb9", "#cad1dd", "#e8effb"] },
-      "on-ink": { "role": "neutral", "displayName": "On-Ink Light", "canonical": "#e4e6ea", "oklch": "oklch(92.5% 0.006 264)", "tonalRamp": ["#0a0b0e", "#252629", "#434548", "#646669", "#87898d", "#acaeb2", "#cfd1d5", "#eceef2"] },
-      "on-ink-2": { "role": "neutral", "displayName": "On-Ink Secondary", "canonical": "#c7cad1", "oklch": "oklch(83.9% 0.010 267)", "tonalRamp": ["#090b10", "#24262c", "#42454b", "#63666c", "#868990", "#abaeb5", "#ced1d8", "#ebeef6"] }
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Reflex Cobalt",
+        "canonical": "#1f3fd1",
+        "oklch": "oklch(45.6% 0.225 266)",
+        "tonalRamp": [
+          "#010037",
+          "#08007e",
+          "#1325ba",
+          "#2b52e4",
+          "#527efe",
+          "#89abfe",
+          "#bdd1fe",
+          "#e7effe"
+        ]
+      },
+      "cobalt-deep": {
+        "role": "primary",
+        "displayName": "Cobalt Deep (hover/pressed)",
+        "canonical": "#142b9c",
+        "oklch": "oklch(36.4% 0.183 266)",
+        "tonalRamp": [
+          "#020037",
+          "#08007d",
+          "#1934a5",
+          "#365acd",
+          "#5680f6",
+          "#89abfe",
+          "#bdd1fe",
+          "#e7effe"
+        ]
+      },
+      "cobalt-tint": {
+        "role": "primary",
+        "displayName": "Cobalt Tint",
+        "canonical": "#e7ebfb",
+        "oklch": "oklch(94.2% 0.022 274)",
+        "tonalRamp": [
+          "#080a14",
+          "#232631",
+          "#414451",
+          "#626573",
+          "#858897",
+          "#a9adbc",
+          "#ccd0e0",
+          "#eaeefe"
+        ]
+      },
+      "on-cobalt-2": {
+        "role": "primary",
+        "displayName": "On-Cobalt Secondary",
+        "canonical": "#c9d2f7",
+        "oklch": "oklch(86.9% 0.052 274)",
+        "tonalRamp": [
+          "#060821",
+          "#1f2440",
+          "#3c4361",
+          "#5d6484",
+          "#7f87a9",
+          "#a4acd0",
+          "#c6cff4",
+          "#eaeefe"
+        ]
+      },
+      "yellow": {
+        "role": "secondary",
+        "displayName": "Safety Yellow",
+        "canonical": "#ffc915",
+        "oklch": "oklch(86.0% 0.173 88)",
+        "tonalRamp": [
+          "#110a00",
+          "#322400",
+          "#564202",
+          "#7f6200",
+          "#a98400",
+          "#d5a703",
+          "#ffc91e",
+          "#ffedc2"
+        ]
+      },
+      "yellow-deep": {
+        "role": "secondary",
+        "displayName": "Safety Yellow Deep (hover)",
+        "canonical": "#f0b400",
+        "oklch": "oklch(80.3% 0.165 84)",
+        "tonalRamp": [
+          "#120900",
+          "#332400",
+          "#594100",
+          "#826000",
+          "#ad8102",
+          "#dba407",
+          "#ffc84a",
+          "#ffecc9"
+        ]
+      },
+      "red": {
+        "role": "tertiary",
+        "displayName": "Signal Red",
+        "canonical": "#e0352b",
+        "oklch": "oklch(59.5% 0.209 28)",
+        "tonalRamp": [
+          "#210000",
+          "#500000",
+          "#860002",
+          "#c10106",
+          "#ed4337",
+          "#ff8576",
+          "#febfb5",
+          "#ffe9e5"
+        ]
+      },
+      "red-tint": {
+        "role": "tertiary",
+        "displayName": "Red Tint",
+        "canonical": "#fbe7e5",
+        "oklch": "oklch(94.3% 0.022 24)",
+        "tonalRamp": [
+          "#130807",
+          "#312221",
+          "#50413f",
+          "#726160",
+          "#968483",
+          "#bca9a7",
+          "#dfccca",
+          "#fde9e7"
+        ]
+      },
+      "loss-on-ink": {
+        "role": "tertiary",
+        "displayName": "Loss on Ink",
+        "canonical": "#ff6a5f",
+        "oklch": "oklch(70.8% 0.184 26)",
+        "tonalRamp": [
+          "#210000",
+          "#500003",
+          "#860009",
+          "#b82423",
+          "#e35048",
+          "#ff8579",
+          "#febfb7",
+          "#fee9e6"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Fleet Enamel",
+        "canonical": "#fbfbf9",
+        "oklch": "oklch(98.8% 0.003 106)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#262625",
+          "#454543",
+          "#666664",
+          "#898987",
+          "#aeaeac",
+          "#d1d1cf",
+          "#eeeeec"
+        ]
+      },
+      "ground-2": {
+        "role": "neutral",
+        "displayName": "Panel Grey",
+        "canonical": "#eef0f2",
+        "oklch": "oklch(95.4% 0.003 247)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#252728",
+          "#444547",
+          "#646668",
+          "#87898b",
+          "#acaeb0",
+          "#cfd1d3",
+          "#edeff1"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Sign Black",
+        "canonical": "#111216",
+        "oklch": "oklch(18.3% 0.008 274)",
+        "tonalRamp": [
+          "#0a0b0f",
+          "#25262b",
+          "#43454a",
+          "#64666b",
+          "#87898e",
+          "#acaeb3",
+          "#cfd1d7",
+          "#edeef4"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#3d424b",
+        "oklch": "oklch(37.8% 0.017 262)",
+        "tonalRamp": [
+          "#070b12",
+          "#22272f",
+          "#40454e",
+          "#616670",
+          "#848994",
+          "#a8aeb9",
+          "#cbd1dc",
+          "#e8effa"
+        ]
+      },
+      "steel": {
+        "role": "neutral",
+        "displayName": "Steel",
+        "canonical": "#5b616b",
+        "oklch": "oklch(49.1% 0.018 260)",
+        "tonalRamp": [
+          "#070b13",
+          "#22272f",
+          "#40454f",
+          "#606671",
+          "#838a94",
+          "#a8aeb9",
+          "#cad1dd",
+          "#e8effb"
+        ]
+      },
+      "on-ink": {
+        "role": "neutral",
+        "displayName": "On-Ink Light",
+        "canonical": "#e4e6ea",
+        "oklch": "oklch(92.5% 0.006 264)",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#252629",
+          "#434548",
+          "#646669",
+          "#87898d",
+          "#acaeb2",
+          "#cfd1d5",
+          "#eceef2"
+        ]
+      },
+      "on-ink-2": {
+        "role": "neutral",
+        "displayName": "On-Ink Secondary",
+        "canonical": "#c7cad1",
+        "oklch": "oklch(83.9% 0.010 267)",
+        "tonalRamp": [
+          "#090b10",
+          "#24262c",
+          "#42454b",
+          "#63666c",
+          "#868990",
+          "#abaeb5",
+          "#ced1d8",
+          "#ebeef6"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display (sign gothic)", "purpose": "Page H1s and the final call to action. Big Shoulders Display 900, uppercase. The door title runs two lines with the second in cobalt." },
-      "headline": { "displayName": "Headline", "purpose": "Section H2s, held to about 12 to 16ch." },
-      "title": { "displayName": "Title", "purpose": "Tile, card, tool, lens and trace-state titles; road plates; gauges and phone numerals use the same face at 800 to 900." },
-      "title-text": { "displayName": "Title Text", "purpose": "Sentence-case Barlow 700 H4s and step titles." },
-      "lede": { "displayName": "Lede", "purpose": "Section intros, max 46ch, ink-2." },
-      "body": { "displayName": "Body", "purpose": "Running text in Barlow (1.0625rem under 760px), 66 to 70ch in prose." },
-      "label": { "displayName": "Label", "purpose": "Uppercase Barlow 700 that names a panel, table column, fact or speaker. Never a lead-in above a headline." },
-      "button": { "displayName": "Button", "purpose": "Uppercase Barlow 700 on buttons and the mobile action bar." }
+      "display": {
+        "displayName": "Display (sign gothic)",
+        "purpose": "Page H1s and the final call to action. Big Shoulders Display 900, uppercase. The door title runs two lines with the second in cobalt."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section H2s, held to about 12 to 16ch."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Tile, card, tool, lens and trace-state titles; road plates; gauges and phone numerals use the same face at 800 to 900."
+      },
+      "title-text": {
+        "displayName": "Title Text",
+        "purpose": "Sentence-case Barlow 700 H4s and step titles."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Section intros, max 46ch, ink-2."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text in Barlow (1.0625rem under 760px), 66 to 70ch in prose."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase Barlow 700 that names a panel, table column, fact or speaker. Never a lead-in above a headline."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Uppercase Barlow 700 on buttons and the mobile action bar."
+      }
     },
     "shadows": [
-      { "name": "button-contact", "value": "0 10px 18px -12px rgba(17, 18, 22, 0.45)", "purpose": "Contact shadow under yellow and cobalt buttons on light grounds; removed on line buttons and dark bands." },
-      { "name": "console-lift", "value": "0 30px 60px -30px rgba(17, 18, 22, 0.45)", "purpose": "The SAMPLE dashboard only, so it reads as a lifted device." },
-      { "name": "live-dot-halo", "value": "0 0 0 3px var(--cobalt-tint)", "purpose": "Status lamp halo on the live dot beside the header phone." },
-      { "name": "input-focus", "value": "0 0 0 3px var(--cobalt-tint), 0 0 0 5px var(--cobalt)", "purpose": "Double focus ring on inputs, selects and textareas." },
-      { "name": "input-invalid", "value": "0 0 0 3px var(--red-tint)", "purpose": "Halo on invalid fields, paired with a red border." },
-      { "name": "cab-gasket", "value": "inset 0 0 0 6px var(--ink)", "purpose": "Cab-window rubber gasket drawn as one inset stroke on the window polygon." }
+      {
+        "name": "button-contact",
+        "value": "0 10px 18px -12px rgba(17, 18, 22, 0.45)",
+        "purpose": "Contact shadow under yellow and cobalt buttons on light grounds; removed on line buttons and dark bands."
+      },
+      {
+        "name": "console-lift",
+        "value": "0 30px 60px -30px rgba(17, 18, 22, 0.45)",
+        "purpose": "The SAMPLE dashboard only, so it reads as a lifted device."
+      },
+      {
+        "name": "live-dot-halo",
+        "value": "0 0 0 3px var(--cobalt-tint)",
+        "purpose": "Status lamp halo on the live dot beside the header phone."
+      },
+      {
+        "name": "input-focus",
+        "value": "0 0 0 3px var(--cobalt-tint), 0 0 0 5px var(--cobalt)",
+        "purpose": "Double focus ring on inputs, selects and textareas."
+      },
+      {
+        "name": "input-invalid",
+        "value": "0 0 0 3px var(--red-tint)",
+        "purpose": "Halo on invalid fields, paired with a red border."
+      },
+      {
+        "name": "cab-gasket",
+        "value": "inset 0 0 0 6px var(--ink)",
+        "purpose": "Cab-window rubber gasket drawn as one inset stroke on the window polygon."
+      }
     ],
     "motion": [
-      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Default for presses (160ms), arrow nudges (200ms), underline wipes (220ms), reveals (700 to 800ms), stripe draw (900ms) and image zooms (900ms)." },
-      { "name": "ease-in-out", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "Horizontal accordion flex-grow (600ms)." },
-      { "name": "press", "value": "transform: scale(0.97) over 160ms ease-out", "purpose": "Active state on buttons and action-bar cells (0.95 to 0.99 on smaller controls)." },
-      { "name": "fleet-stripe-draw", "value": "clip-path inset(0 100% 0 0) to inset(0) over 900ms ease-out; tape delayed 120ms", "purpose": "Lays the livery on like vinyl when the page loads." },
-      { "name": "reveal", "value": "IntersectionObserver (threshold 0.08, rootMargin 0 0 -8% 0): opacity 0 and translateY(24px) to rest over 700/800ms ease-out", "purpose": "One-shot entrance for elements with data-reveal." },
-      { "name": "trace-scrub", "value": "GSAP ScrollTrigger: strokeDashoffset to 0, start top 60%, end bottom 65%, scrub 0.6; missed branch opacity scrub top 75% to top 50%", "purpose": "The signature call trace draws as the reader scrolls." },
-      { "name": "manifesto-words", "value": "GSAP ScrollTrigger: each word opacity 0.14 to 1, stagger 0.08, start top 78%, end bottom 42%, scrub 0.4", "purpose": "Manifesto lines come up from faint to full." },
-      { "name": "console-tilt", "value": "GSAP ScrollTrigger: scale 0.88, rotateX 8deg, opacity 0.55 to flat, top 92% to top 38%, scrub 0.5; fades to 0.35 on exit", "purpose": "The SAMPLE console tilts upright into view." },
-      { "name": "marquee", "value": "translateX(-50%) over 40s linear infinite; paused on hover", "purpose": "Ink band of lettered phrases." },
-      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Animations collapse to 0.001ms, the marquee stops and wraps, reveals render in place, the stripe is not drawn, GSAP is skipped and every trace node is lit, and the hero video does not autoplay." }
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Default for presses (160ms), arrow nudges (200ms), underline wipes (220ms), reveals (700 to 800ms), stripe draw (900ms) and image zooms (900ms)."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Horizontal accordion flex-grow (600ms)."
+      },
+      {
+        "name": "press",
+        "value": "transform: scale(0.97) over 160ms ease-out",
+        "purpose": "Active state on buttons and action-bar cells (0.95 to 0.99 on smaller controls)."
+      },
+      {
+        "name": "fleet-stripe-draw",
+        "value": "clip-path inset(0 100% 0 0) to inset(0) over 900ms ease-out; tape delayed 120ms",
+        "purpose": "Lays the livery on like vinyl when the page loads."
+      },
+      {
+        "name": "reveal",
+        "value": "IntersectionObserver (threshold 0.08, rootMargin 0 0 -8% 0): opacity 0 and translateY(24px) to rest over 700/800ms ease-out",
+        "purpose": "One-shot entrance for elements with data-reveal."
+      },
+      {
+        "name": "trace-scrub",
+        "value": "GSAP ScrollTrigger: strokeDashoffset to 0, start top 60%, end bottom 65%, scrub 0.6; missed branch opacity scrub top 75% to top 50%",
+        "purpose": "The signature call trace draws as the reader scrolls."
+      },
+      {
+        "name": "manifesto-words",
+        "value": "GSAP ScrollTrigger: each word opacity 0.14 to 1, stagger 0.08, start top 78%, end bottom 42%, scrub 0.4",
+        "purpose": "Manifesto lines come up from faint to full."
+      },
+      {
+        "name": "console-tilt",
+        "value": "GSAP ScrollTrigger: scale 0.88, rotateX 8deg, opacity 0.55 to flat, top 92% to top 38%, scrub 0.5; fades to 0.35 on exit",
+        "purpose": "The SAMPLE console tilts upright into view."
+      },
+      {
+        "name": "marquee",
+        "value": "translateX(-50%) over 40s linear infinite; paused on hover",
+        "purpose": "Ink band of lettered phrases."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Animations collapse to 0.001ms, the marquee stops and wraps, reveals render in place, the stripe is not drawn, GSAP is skipped and every trace node is lit, and the hero video does not autoplay."
+      }
     ],
     "breakpoints": [
-      { "name": "lg", "value": "1180px", "purpose": "Nav tightens, logo 184px, road plates 5 to 3 columns." },
-      { "name": "md", "value": "1020px", "purpose": "Header 68px with menu button; two-column layouts stack; bento and console to 2 columns; trace pin unsticks." },
-      { "name": "sm", "value": "760px", "purpose": "Sticky mobile action bar; single-column grids; accordion becomes a vertical stack; door seam and photo pills removed." }
+      {
+        "name": "lg",
+        "value": "1180px",
+        "purpose": "Nav tightens, logo 184px, road plates 5 to 3 columns."
+      },
+      {
+        "name": "md",
+        "value": "1020px",
+        "purpose": "Header 68px with menu button; two-column layouts stack; bento and console to 2 columns; trace pin unsticks."
+      },
+      {
+        "name": "sm",
+        "value": "760px",
+        "purpose": "Sticky mobile action bar; single-column grids; accordion becomes a vertical stack; door seam and photo pills removed."
+      }
     ]
   },
   "components": [
@@ -144,22 +499,58 @@
       "Scroll-scrubbed signature motion with a custom ease-out (cubic-bezier(0.23, 1, 0.32, 1)) for everything else."
     ],
     "rules": [
-      { "name": "The Yellow Means Go Rule", "body": "Safety Yellow belongs to the action layer: buttons, the mobile Book bar, the Scorecard lead block, the fleet-stripe tape and the [ ... ] placeholder token. Use it to mark what to press or what is still missing, never as decoration or emphasis.", "section": "colors" },
-      { "name": "The Red Means Loss Rule", "body": "Signal Red marks what is lost: the missed call, its cost and the weakest lens. Form validation is the one functional exception. Red never decorates and never marks success.", "section": "colors" },
-      { "name": "The Cobalt Speaks Rule", "body": "When the business or its AI is doing the work (answering, booking, the live line), the type is cobalt. Ink is for the owner's own words.", "section": "colors" },
-      { "name": "The Lettered or Read Rule", "body": "If it should be read from across the road (names, numbers, states, titles), it is Big Shoulders Display 900 in uppercase. If it should be read up close, it is Barlow in sentence case. There is no third face and no mid-weight display.", "section": "typography" },
-      { "name": "The Phone at Road Scale Rule", "body": "The phone number is display type, never body-sized link text, wherever it is the primary content of a block.", "section": "typography" },
-      { "name": "The Shared Seam Rule", "body": "Adjacent panels share one 2px ink seam. Don't float cards on a gap of ground colour.", "section": "layout" },
-      { "name": "The Painted Panel Rule", "body": "Panels are paint on a door, not cards on a table. A new surface gets a 2px ink border or a seam, not a shadow.", "section": "elevation" },
-      { "name": "The One Stroke Rule", "body": "One weight (2px, ink) for every rule and icon. A heavier line has to be a named device (trace, gasket, plate, focus), never a casual emphasis.", "section": "shapes" },
-      { "name": "The Plate Edge Rule", "body": "Corners are square. Round only signal lamps.", "section": "shapes" }
+      {
+        "name": "The Yellow Means Go Rule",
+        "body": "Safety Yellow belongs to the action layer: buttons, the mobile Book bar, the Scorecard lead block, the fleet-stripe tape and the [ ... ] placeholder token. Use it to mark what to press or what is still missing, never as decoration or emphasis.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Means Loss Rule",
+        "body": "Signal Red marks what is lost: the missed call and money leaking away. The Scorecard weakest stage is named in cobalt with an ink bar; only its dollar estimate is red. Form validation is the one functional exception. Red never decorates and never marks success.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cobalt Speaks Rule",
+        "body": "When the business or its AI is doing the work (answering, booking, the live line), the type is cobalt. Ink is for the owner's own words.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lettered or Read Rule",
+        "body": "If it should be read from across the road (names, numbers, states, titles), it is Big Shoulders Display 900 in uppercase. If it should be read up close, it is Barlow in sentence case. There is no third face and no mid-weight display.",
+        "section": "typography"
+      },
+      {
+        "name": "The Phone at Road Scale Rule",
+        "body": "The phone number is display type, never body-sized link text, wherever it is the primary content of a block.",
+        "section": "typography"
+      },
+      {
+        "name": "The Shared Seam Rule",
+        "body": "Adjacent panels share one 2px ink seam. Don't float cards on a gap of ground colour.",
+        "section": "layout"
+      },
+      {
+        "name": "The Painted Panel Rule",
+        "body": "Panels are paint on a door, not cards on a table. A new surface gets a 2px ink border or a seam, not a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Stroke Rule",
+        "body": "One weight (2px, ink) for every rule and icon. A heavier line has to be a named device (trace, gasket, plate, focus), never a casual emphasis.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Plate Edge Rule",
+        "body": "Corners are square. Round only signal lamps.",
+        "section": "shapes"
+      }
     ],
     "dos": [
       "Do draw every border, seam, divider and icon with the single 2px ink stroke, and keep every corner square.",
       "Do set names, numbers, states and titles in Big Shoulders Display 900 uppercase, and everything read up close in Barlow.",
       "Do set the phone number in display type at road scale wherever it is the primary content.",
       "Do reserve Safety Yellow for actions, the Scorecard lead block, the fleet-stripe tape and the [ ... ] placeholder token.",
-      "Do reserve Signal Red for missed-call loss and its cost, the weakest lens and form errors.",
+      "Do reserve Signal Red for missed-call loss and money lost, plus form errors.",
       "Do join grouped panels with a shared 2px ink seam (2px gap over an ink ground).",
       "Do use the custom ease-out (cubic-bezier(0.23, 1, 0.32, 1)) for state transitions, a 0.97 press scale, and hover effects gated to pointer-fine devices.",
       "Do label any illustrative dashboard or transcript with a visible SAMPLE tag, and mark every owner-supplied number with the placeholder token until it is real.",

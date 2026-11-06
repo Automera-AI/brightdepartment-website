@@ -167,7 +167,7 @@ Motion is mechanical and scroll-driven. The call trace draws as you read, manife
 A high-contrast fleet livery: near-white enamel and near-black vinyl, one saturated blue that does the talking, one yellow that means go and one red that means loss.
 
 ### Primary
-- **Reflex Cobalt** (cobalt): the working colour. The H1's second line, the door phone number, the call-trace line and its nodes, booked values, AI turns in the transcript, Scorecard progress and score bars, check-list icons, nav underlines, focus rings, caret and form accent colour, road plates, the Dashboard tile and the quote block. Cobalt Deep (cobalt-deep) is its pressed and hover state only.
+- **Reflex Cobalt** (cobalt): the working colour. The H1's second line, the door phone number, the call-trace line and its nodes, booked values, AI turns in the transcript, Scorecard progress and score bars, check-list icons, nav underlines, focus rings, caret and form accent colour, road plates, the Dashboard tile and the quote block. Cobalt Deep (cobalt-deep) is its pressed and hover state only; the highlighted bottleneck cell in the four-lens grid (white title, on-cobalt text); and the marquee separators.
 - **Cobalt Tint** (cobalt-tint): the quiet cobalt field. The live-dot halo, the console's Top 2 panel, the selected Scorecard option and the inner ring of the input focus treatment.
 - **On-Cobalt Secondary** (on-cobalt-2): lede and secondary text set on cobalt panels.
 
@@ -175,8 +175,8 @@ A high-contrast fleet livery: near-white enamel and near-black vinyl, one satura
 - **Safety Yellow** (yellow): action. Primary buttons, the mobile Book button, the sound toggle, the skip link, the Scorecard lead block on the free-tools section, the yellow-and-ink tape in the fleet stripe, and the owner-supplied placeholder token. Text selection also picks it up. Safety Yellow Deep (yellow-deep) is the hover state only.
 
 ### Tertiary
-- **Signal Red** (red): loss. The missed-call branch of the trace and its state name, the missed-calls gauge, the weakest-lens bar on Scorecard results, and invalid form fields with their error text. Red Tint (red-tint) backs the missed-call card and the invalid-field halo.
-- **Loss on Ink** (loss-on-ink): the calculator's monthly-loss figure on the ink panel, where plain red would not hold contrast. The CSS sets it as a literal, not a custom property.
+- **Signal Red** (red): loss. The missed-call branch of the trace and its state name, the missed-calls gauge, the estimated monthly leak on Scorecard results, and invalid form fields with their error text. Red Tint (red-tint) backs the missed-call card and the invalid-field halo.
+- **Loss on Ink** (--loss-on-ink, with --loss-on-ink-2 for its caption): the calculator's monthly-loss figure on the ink panel, where plain red would not hold contrast. **Red Text** (--red-text) is the darker red for small loss text on the red tint.
 
 ### Neutral
 - **Fleet Enamel** (ground): the page ground and the header behind its blur.
@@ -185,12 +185,12 @@ A high-contrast fleet livery: near-white enamel and near-black vinyl, one satura
 - **Sign Black** (ink): all text, every 2px rule, the seam colour behind panel grids, the footer, marquee, calculator output and mobile Call button.
 - **Ink Secondary** (ink-2): ledes and paragraph text inside panels.
 - **Steel** (steel): captions, hints, table headers, metadata.
-- **On-Ink Light / On-Ink Secondary** (on-ink, on-ink-2): body and secondary text on ink bands and the footer. Both are literals in the CSS, not custom properties.
+- **On-Ink ramp** (--on-ink, --on-ink-2, --on-ink-3, --on-ink-4): text on ink bands and the footer, from body down to quiet captions. **Rule on Ink** (--rule-on-ink) draws 2px rules on ink. **Placeholder** (--placeholder) colours input placeholder text. Every colour is a custom property on :root; nothing outside :root is a raw hex value.
 
 ### Named Rules
 **The Yellow Means Go Rule.** Safety Yellow belongs to the action layer: buttons, the mobile Book bar, the Scorecard lead block, the fleet-stripe tape and the [ ... ] placeholder token. Use it to mark what to press or what is still missing, never as decoration or emphasis.
 
-**The Red Means Loss Rule.** Signal Red marks what is lost: the missed call, its cost and the weakest lens. Form validation is the one functional exception. Red never decorates and never marks success.
+**The Red Means Loss Rule.** Signal Red marks what is lost: the missed call and money leaking away. The Scorecard's weakest stage is named in cobalt with an ink bar; only its dollar estimate is red. Form validation is the one functional exception. Red never decorates and never marks success.
 
 **The Cobalt Speaks Rule.** When the business or its AI is doing the work (answering, booking, the live line), the type is cobalt. Ink is for the owner's own words.
 
@@ -249,7 +249,7 @@ Depth is flat and printed. Separation comes from 2px ink rules and band changes,
 
 Every panel, button, input, tag, plate and image frame has squared corners (0px radius). The single stroke (2px, the `--stroke` token) draws every border, seam, divider, underline, FAQ plus sign and icon (24px icons, stroke-width 2, square caps, miter joins). Heavier weights are reserved for specific devices: the trace line (6px, round caps), trace nodes (4px ring), the cab-window gasket (6px inset), the road plate's 3px white reflective border inside its cobalt outline, and the 3px focus outline.
 
-Circles appear only as signal lamps: the live dot, the transcript state dot and the trace nodes. Diagonals appear in three places: the cab window's slanted top-left cut (polygon clip at 22% and 34%), the fleet stripe's -32deg skew with -58deg tape, and the 45deg rotated yellow square that separates marquee phrases. Photography placeholders use a 45deg ground and ground-2 hatch.
+Circles appear only as signal lamps: the live dot, the transcript state dot and the trace nodes. Diagonals appear in three places: the cab window's slanted top-left cut (polygon clip at 22% and 34%), the fleet stripe's -32deg skew with -58deg tape, and the 45deg rotated cobalt square that separates marquee phrases. Photography placeholders use a 45deg ground and ground-2 hatch.
 
 ### Named Rules
 **The One Stroke Rule.** One weight (2px, ink) for every rule and icon. A heavier line has to be a named device (trace, gasket, plate, focus), never a casual emphasis.
@@ -289,7 +289,7 @@ A device-like dashboard panel: paper body, 2px ink frame and the console lift sh
 Industry panels in a 2px-seamed ink strip (clamp(460px, 52vw, 600px) tall). Photos are slightly desaturated (grayscale 0.35) under an ink gradient, with a display name. Hover or focus grows the panel to flex-grow 2.6 and shrinks the rest to 0.7 (600ms ease-in-out), restores colour, and reveals the pain line and a yellow "go" link. On touch tablets the first tap opens a panel. Under 760px it becomes a vertical stack with copy always visible.
 
 ### Calculator
-A two-panel form: paper inputs on the left (2px fields, prefix and suffix units, cobalt-accent range) and an ink output panel on the right. The output leads with the monthly loss as a giant display numeral in Loss on Ink, then the yearly figure, the formula under a 1px rule, and white-bordered line buttons for next steps.
+A two-panel form: paper inputs on the left (2px fields, prefix and suffix units, cobalt-accent range) and an ink output panel on the right. The output leads with the monthly loss as a giant display numeral in Loss on Ink, then the yearly figure, the formula under a 2px rule, and white-bordered line buttons for next steps.
 
 ### Road Plates
 The launch timeline as highway signs: a 5-column bordered strip (3 at 1180px, 1 at 760px). Each step leads with a plate: cobalt fill, white display 900 uppercase, a 3px white border inside a 2px cobalt outline, like a reflective sign. The final plate is ink.
@@ -304,7 +304,7 @@ The free-tools block: a 2px-bordered two-column panel. The left is the Scorecard
 Native details elements between 2px ink rules. Summaries are Barlow 700 at clamp(1.15rem, 1.6vw, 1.4rem), with a 22px plus drawn from two 2px bars whose vertical bar rotates flat when open (240ms ease-out). Answers are capped at 70ch.
 
 ### Marquee
-An ink band between 2px rules carrying display 900 uppercase phrases (clamp(2rem, 4vw, 3.4rem)) separated by small rotated yellow squares. It loops over 40s, linear, pauses on hover, and wraps statically under reduced motion.
+An ink band between 2px rules carrying display 900 uppercase phrases (clamp(2rem, 4vw, 3.4rem)) separated by small rotated cobalt squares. It loops over 40s, linear, pauses on hover, and wraps statically under reduced motion.
 
 ### Inputs / Fields
 - **Style:** paper fill, 2px ink border, squared, 54px min height, 12px 14px padding, 1.05rem text; Barlow 700 labels above, steel hints. Selects use an inline 2px chevron. Textareas start at 140px.
@@ -329,7 +329,7 @@ Owner-supplied values the site may not invent are set as a bracketed token, such
 - **Do** set names, numbers, states and titles in Big Shoulders Display 900 uppercase, and everything read up close in Barlow.
 - **Do** set the phone number in display type at road scale wherever it is the primary content.
 - **Do** reserve Safety Yellow for actions, the Scorecard lead block, the fleet-stripe tape and the [ ... ] placeholder token.
-- **Do** reserve Signal Red for missed-call loss and its cost, the weakest lens and form errors.
+- **Do** reserve Signal Red for missed-call loss and money lost, plus form errors.
 - **Do** join grouped panels with a shared 2px ink seam (2px gap over an ink ground).
 - **Do** use the custom ease-out (cubic-bezier(0.23, 1, 0.32, 1)) for state transitions, a 0.97 press scale, and hover effects gated to pointer-fine devices.
 - **Do** label any illustrative dashboard or transcript with a visible SAMPLE tag, and mark every owner-supplied number with the placeholder token until it is real.
