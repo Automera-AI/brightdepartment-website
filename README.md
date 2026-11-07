@@ -46,6 +46,7 @@ Placeholders are marked with yellow `[ ... ]` tags on the page. Search the code 
 
 **Settings**
 - [x] GoHighLevel calendar connected (`consultations-x8yc0`). Still to do in GHL: set the booking redirect to `/thanks/booked/`.
+- [ ] Cloudflare Turnstile: paste the widget's site key into `turnstileSiteKey` in `config.js`, and add every domain the site runs on (brightdepartment.com, www.brightdepartment.com, automera-ai.github.io for the preview) to the widget's hostname list in Cloudflare. Netlify Forms can't verify the token on the server, so the check is client-side until form posts go through a function that calls Cloudflare's siteverify with the secret key.
 - [ ] Analytics: GA4 ID, Plausible domain, and/or Microsoft Clarity ID in `config.js`.
 - [ ] 25 AI Prompts: make sure the guide is emailed automatically when the `ai-prompts` form is submitted.
 - [ ] Scorecard: make sure the full report email goes out when the `scorecard` form is submitted.

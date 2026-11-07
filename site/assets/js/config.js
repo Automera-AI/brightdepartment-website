@@ -7,6 +7,11 @@ window.BD_CONFIG = {
   // While empty, /book/ shows the "request a time" form instead of the live calendar.
   ghlCalendarUrl: "https://api.leadconnectorhq.com/widget/bookings/consultations-x8yc0",
 
+  // Cloudflare Turnstile site key (the public one, never the secret key). Puts a spam check
+  // above every form's submit button. Leave empty to switch it off.
+  // The widget's hostname list in Cloudflare must include every domain the site runs on.
+  turnstileSiteKey: "",
+
   // Analytics (any or all). Leave empty to disable.
   ga4Id: "",            // e.g. "G-XXXXXXXXXX"
   plausibleDomain: "",  // e.g. "brightdepartment.com"
