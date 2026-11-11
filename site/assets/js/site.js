@@ -2,6 +2,8 @@
   "use strict";
 
   var CFG = window.BD_CONFIG || {};
+  // basePath lets the same files run under a sub-folder (e.g. a GitHub Pages preview)
+  var BASE = String(CFG.basePath || "").replace(/\/$/, "");
   var doc = document.documentElement;
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function $(sel, root) { return (root || document).querySelector(sel); }
@@ -80,7 +82,7 @@
     menuBtn.addEventListener("click", function () {
       var open = header.classList.toggle("menu-open");
       menuBtn.setAttribute("aria-expanded", String(open));
-      menuBtn.querySelector("use").setAttribute("href", "/assets/icons.svg#" + (open ? "i-close" : "i-menu"));
+      menuBtn.querySelector("use").setAttribute("href", BASE + "/assets/icons.svg#" + (open ? "i-close" : "i-menu"));
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && header.classList.contains("menu-open")) { menuBtn.click(); menuBtn.focus(); }
@@ -93,7 +95,7 @@
     if (!a) return;
     var href = a.getAttribute("href") || "";
     if (href.indexOf("tel:") === 0) track("call_click", { location: a.getAttribute("data-loc") || location.pathname });
-    else if (href.indexOf("/book/") === 0) track("book_cta_click", { location: a.getAttribute("data-loc") || location.pathname });
+    else if (href.indexOf(BASE + "/book/") === 0) track("book_cta_click", { location: a.getAttribute("data-loc") || location.pathname });
     else if (href.indexOf("mailto:") === 0) track("email_click", {});
   });
 
@@ -106,10 +108,10 @@
     btn.addEventListener("click", function () {
       if (vid.muted) {
         vid.muted = false; vid.currentTime = 0; var p = vid.play(); if (p && p.catch) p.catch(function () {});
-        label.textContent = "Mute"; use.setAttribute("href", "/assets/icons.svg#i-mute");
+        label.textContent = "Mute"; use.setAttribute("href", BASE + "/assets/icons.svg#i-mute");
         btn.setAttribute("aria-pressed", "true"); track("video_sound_on", {});
       } else {
-        vid.muted = true; label.textContent = "Play with sound"; use.setAttribute("href", "/assets/icons.svg#i-volume");
+        vid.muted = true; label.textContent = "Play with sound"; use.setAttribute("href", BASE + "/assets/icons.svg#i-volume");
         btn.setAttribute("aria-pressed", "false");
       }
     });
@@ -148,8 +150,68 @@
     fd.forEach(function (v, k) { parts.push(encodeURIComponent(k) + "=" + encodeURIComponent(v)); });
     return parts.join("&");
   }
+  /* ---------- Cloudflare Turnstile (spam check on every form) ---------- */
+  // Switched on by BD_CONFIG.turnstileSiteKey. Each widget renders once its form is near the screen,
+  // so the hidden calculator form only loads one when it is opened.
+  var TS_KEY = CFG.turnstileSiteKey || "";
+  var tsQueue = [];
+  var tsReady = false;
+  function tsClearError(form) {
+    var e = form.querySelector("[data-ts-err]");
+    if (e) e.parentNode.removeChild(e);
+  }
+  function tsRender(form) {
+    if (form.bdTsId !== undefined || !window.turnstile) return;
+    var slot = form.querySelector(".ts-slot");
+    form.bdTsId = window.turnstile.render(slot, {
+      sitekey: TS_KEY,
+      theme: form.classList.contains("calc-email") ? "dark" : "light",
+      size: "flexible",
+      action: (form.getAttribute("name") || "form").replace(/[^a-z0-9_-]/gi, "_"),
+      "refresh-expired": "auto",
+      callback: function () { tsClearError(form); }
+    });
+  }
+  window.bdTurnstileLoaded = function () {
+    tsReady = true;
+    tsQueue.forEach(tsRender);
+    tsQueue = [];
+  };
+  function tsWatch(form) {
+    if (!TS_KEY) return;
+    var slot = document.createElement("div");
+    slot.className = "ts-slot";
+    var btn = form.querySelector('[type="submit"]');
+    form.insertBefore(slot, btn || null);
+    var show = function () { if (tsReady) tsRender(form); else if (tsQueue.indexOf(form) < 0) tsQueue.push(form); };
+    // Also render on first focus, in case the form was never observed on screen.
+    form.addEventListener("focusin", show, { once: true });
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (en) { if (en.isIntersecting) { io.disconnect(); show(); } });
+      }, { rootMargin: "300px 0px" });
+      io.observe(slot);
+    } else show();
+  }
+  function tsToken(form) {
+    if (!TS_KEY) return "off";
+    var i = form.querySelector('[name="cf-turnstile-response"]');
+    return i && i.value ? i.value : "";
+  }
+  function tsReset(form) {
+    if (window.turnstile && form.bdTsId !== undefined) window.turnstile.reset(form.bdTsId);
+  }
+  if (TS_KEY && document.querySelector("form[data-bd-form]")) {
+    var tsScript = document.createElement("script");
+    tsScript.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=bdTurnstileLoaded";
+    tsScript.async = true;
+    tsScript.defer = true;
+    document.head.appendChild(tsScript);
+  }
+
   $$("form[data-bd-form]").forEach(function (form) {
     fillAttrib(form);
+    tsWatch(form);
     form.setAttribute("novalidate", "");
     var started = false;
     form.addEventListener("input", function () {
@@ -159,12 +221,28 @@
       e.preventDefault();
       if (typeof form.bdBeforeSubmit === "function") form.bdBeforeSubmit();
       if (!validate(form)) return;
+      if (!tsToken(form)) {
+        var tsSlot = form.querySelector(".ts-slot");
+        if (tsSlot && !form.querySelector("[data-ts-err]")) {
+          var tsErr = document.createElement("p");
+          tsErr.className = "field-error";
+          tsErr.setAttribute("data-ts-err", "");
+          tsErr.setAttribute("role", "alert");
+          tsErr.textContent = "One moment: the spam check is still running. Try again in a second.";
+          tsSlot.parentNode.insertBefore(tsErr, tsSlot.nextSibling);
+        }
+        return;
+      }
       fillAttrib(form);
       var btn = form.querySelector('[type="submit"]');
       var status = form.querySelector(".form-status");
       if (btn) { btn.setAttribute("aria-busy", "true"); btn.disabled = true; }
       if (status) { status.textContent = "Sending…"; status.classList.remove("is-error"); }
-      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: encode(form) })
+      // Preview builds (e.g. GitHub Pages) have no form backend: skip the POST and continue the flow.
+      var send = CFG.previewMode
+        ? Promise.resolve({ ok: true })
+        : fetch(BASE + "/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: encode(form) });
+      send
         .then(function (r) {
           if (!r.ok) throw new Error("bad status " + r.status);
           var name = form.getAttribute("name");
@@ -177,6 +255,7 @@
         .catch(function () {
           if (status) {
             status.classList.add("is-error");
+            tsReset(form);
             status.textContent = "That didn't send. Check your connection and try again, or call " + (CFG.phone || "(804) 635-3682") + ".";
           }
         })
@@ -379,7 +458,7 @@
       fixes.innerHTML = "";
       LENSES[weakest].fix.forEach(function (f) {
         var li = document.createElement("li");
-        li.innerHTML = '<svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-check"/></svg><span></span>';
+        li.innerHTML = '<svg class="icon" aria-hidden="true"><use href="' + BASE + '/assets/icons.svg#i-check"/></svg><span></span>';
         li.querySelector("span").textContent = f; fixes.appendChild(li);
       });
       var form = $("form[name=scorecard]", root.parentNode) || $("form[name=scorecard]");
@@ -390,7 +469,7 @@
         form.querySelector("[name=answers]").value = $$("input[type=radio]:checked", root).map(function (r) { return r.name + "=" + r.value; }).join("; ") + "; leads/wk=" + leads + "; job=" + job;
       }
       var bookLink = $("[data-sc-book]", root);
-      if (bookLink) bookLink.href = "/book/?src=scorecard&stage=" + encodeURIComponent(LENSES[weakest].name);
+      if (bookLink) bookLink.href = BASE + "/book/?src=scorecard&stage=" + encodeURIComponent(LENSES[weakest].name);
       track("scorecard_complete", { weakest: LENSES[weakest].name });
       results.querySelector("h2").setAttribute("tabindex", "-1");
       results.querySelector("h2").focus();
