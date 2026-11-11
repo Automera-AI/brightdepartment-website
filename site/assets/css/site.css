@@ -479,6 +479,7 @@ html { scrollbar-color: var(--ink) var(--ground-2); scrollbar-width: thin; }
 .input::placeholder, .textarea::placeholder { color: var(--placeholder); }
 .input[aria-invalid="true"], .select[aria-invalid="true"] { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-tint); }
 .field-error { color: var(--red); font-weight: 600; font-size: 0.92rem; }
+.ts-slot { min-height: 65px; }
 .prefix-input { position: relative; }
 .prefix-input span { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-weight: 700; color: var(--steel); }
 .prefix-input .input { padding-left: 30px; }
